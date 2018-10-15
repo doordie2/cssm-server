@@ -19,10 +19,15 @@
         <project.build.sourceencoding>UTF-8</project.build.sourceencoding>
 		<project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
 		<java.version>1.8</java.version>
+
+		<cssm-common-base.version>1.0-SNAPSHOT</cssm-common-base.version>
+		<cssm-common-core.version>1.0-SNAPSHOT</cssm-common-core.version>
+		<cssm-support-user.version>1.0-SNAPSHOT</cssm-support-user.version>
     </properties>
 
     <modules>
 		<module>cssm-project-server</module>
+		<module>cssm-common</module><module>cssm-support</module>
 	</modules>
 
     <dependencyManagement>

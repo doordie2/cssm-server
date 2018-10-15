@@ -1,0 +1,1 @@
+#dto对象，用于前端向controller传输，和controller向provider传输
