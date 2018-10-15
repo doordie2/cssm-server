@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@git.mcilife.com:mc-server/zlnsh-repo.git
+          search-paths: '{application}'
+  application:
+    name: cssm-server-config
+  security:
+    basic:
+      enabled: true
+    user:
+      name: server-config
+      password: 35446Q3QJS7UvVdN
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://server-eureka:2lvoHcfXbXmTBvQm@localhost:1000/eureka
+  instance:
+      prefer-ip-address: true
+      instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+server:
+  port: 6030
+
