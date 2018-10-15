@@ -1,0 +1,15 @@
+*/target
+*/*/target
+*/logs
+*/*/logs
+*/*.iml
+*/src/test
+.idea
+*.iml
+.DS_Store
+*/.DS_Store
+*/*/src/main/resources/rebel.xml
+*/*/.rebel.xml.bak
+logs
+
+jrebel-classpath-728.jar
