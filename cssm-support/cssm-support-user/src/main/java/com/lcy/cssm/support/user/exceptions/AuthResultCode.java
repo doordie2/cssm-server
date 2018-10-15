@@ -1,9 +1,8 @@
 package com.lcy.cssm.support.user.exceptions;
 
 
-
-import com.mcilife.zlnsh.common.base.exceptions.ResultCode;
-import com.mcilife.zlnsh.common.base.exceptions.ResultCodeType;
+import com.lcy.cssm.common.base.exceptions.ResultCode;
+import com.lcy.cssm.common.base.exceptions.ResultCodeType;
 import org.apache.commons.lang3.StringUtils;
 
 /**

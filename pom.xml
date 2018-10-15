@@ -22,12 +22,14 @@
 
 		<cssm-common-base.version>1.0-SNAPSHOT</cssm-common-base.version>
 		<cssm-common-core.version>1.0-SNAPSHOT</cssm-common-core.version>
+		<cssm-common-web.version>1.0-SNAPSHOT</cssm-common-web.version>
+
 		<cssm-support-user.version>1.0-SNAPSHOT</cssm-support-user.version>
     </properties>
 
     <modules>
 		<module>cssm-project-server</module>
-		<module>cssm-common</module><module>cssm-support</module>
+		<module>cssm-common</module><module>cssm-support</module><module>cssm-application</module><module>cssm-api</module>
 	</modules>
 
     <dependencyManagement>

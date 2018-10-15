@@ -4,9 +4,6 @@ import com.lcy.cssm.common.base.constant.CommonConstant;
 import com.lcy.cssm.common.base.constant.UrlTypeConstant;
 import com.lcy.cssm.common.base.constant.UserOsConstant;
 import com.lcy.cssm.common.base.constant.aliyun.AliyunBucketEnum;
-import com.lcy.cssm.common.core.bean.ApplicationContextProvider;
-import com.lcy.cssm.support.user.dto.UserInfoDTO;
-import com.lcy.cssm.support.user.result.UserLikesResult;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,12 +12,9 @@ import java.util.Map;
 /**
  * 参数辅助类
  *
- * @author 赵天增
+ * @author lcy
  */
 public class ParamUtils {
-
-    private static UserFacade userFacade = ApplicationContextProvider.getBean(UserFacade.class);
-
 
     /**
      * 截取字符串指定字符数长度
@@ -74,22 +68,6 @@ public class ParamUtils {
         return Integer.parseInt(String.valueOf(request.getAttribute("userId")));
     }
 
-    /**
-     * 根据token获取userId
-     * @param token
-     * @return
-     */
-    public static Integer getUserIdByToken(String token) {
-        Integer userId = null;
-        if (StringUtils.isNotBlank(token)) {
-            UserInfoDTO userInfoDTO = userFacade.getUserInfoByToken(token);
-            if (userInfoDTO != null) {
-                userId = userInfoDTO.getUserId();
-            }
-        }
-        return userId;
-    }
-
     public static String getAppType(HttpServletRequest request){
         String userOs = request.getHeader("user-os");
         String appType = UrlTypeConstant.WECHAT;
@@ -98,67 +76,6 @@ public class ParamUtils {
         }
         return appType;
     }
-
-    /**
-     * 组装用户头像
-     * @param userLikesResult
-     * @return
-     */
-    public static String setUserAvatar(UserLikesResult userLikesResult) {
-        String avatar = AliyunBucketEnum.BUCKET_COMMON.getUrl() + userLikesResult.getUserAvatar();
-        for (String url : CommonConstant.URL_FILTER) {
-            if(StringUtils.isNotBlank(userLikesResult.getUserAvatar())){
-                if (userLikesResult.getUserAvatar().startsWith(url)) {
-                    avatar = userLikesResult.getUserAvatar();
-                }
-            }else{
-                avatar = CommonConstant.USER_DEFAULT_PROFILE;
-            }
-        }
-        return avatar;
-    }
-
-    /**
-     * 组装用户头像
-     * @param userLikesResult
-     * @return
-     */
-    public static String setUserAvatarV2(com.lcy.cssm.support.user.result.v2.UserLikesResult userLikesResult) {
-        String avatar = AliyunBucketEnum.BUCKET_COMMON.getUrl() + userLikesResult.getUserAvatar();
-        for (String url : CommonConstant.URL_FILTER) {
-            if(StringUtils.isNotBlank(userLikesResult.getUserAvatar())){
-                if (userLikesResult.getUserAvatar().startsWith(url)) {
-                    avatar = userLikesResult.getUserAvatar();
-                }
-            }else{
-                avatar = AliyunBucketEnum.BUCKET_COMMON.getUrl()+CommonConstant.USER_DEFAULT_PROFILE;
-            }
-        }
-        return avatar;
-    }
-
-    /**
-     * 组装用户头像
-     * @param userLikesResult
-     * @return
-     */
-    public static String setUserAvatarV3(com.lcy.cssm.support.user.result.v3.UserLikesResult userLikesResult) {
-        String avatar = AliyunBucketEnum.BUCKET_COMMON.getUrl() + userLikesResult.getUserAvatar();
-        for (String url : CommonConstant.URL_FILTER) {
-            if(StringUtils.isNotBlank(userLikesResult.getUserAvatar())){
-                if (userLikesResult.getUserAvatar().startsWith(url)) {
-                    avatar = userLikesResult.getUserAvatar();
-                }
-            }else{
-                avatar =AliyunBucketEnum.BUCKET_COMMON.getUrl()+ CommonConstant.USER_DEFAULT_PROFILE;
-            }
-        }
-        return avatar;
-    }
-
-
-
-
 
     public static String setUserAvatar(String userAdatar) {
         String avatar = AliyunBucketEnum.BUCKET_COMMON.getUrl() + userAdatar;
