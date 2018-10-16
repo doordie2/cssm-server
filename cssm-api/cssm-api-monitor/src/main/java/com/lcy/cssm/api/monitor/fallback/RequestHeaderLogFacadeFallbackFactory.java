@@ -12,12 +12,7 @@ public class RequestHeaderLogFacadeFallbackFactory implements FallbackFactory<Re
 
     @Override
     public RequestHeaderLogFacade create(Throwable w){
-        return new RequestHeaderLogFacade() {
-            @Override
-            public void insertRequestHeaderLog(String userOs, String osVersion, String appVersion, String agentModel, String userAgent, String agentNum, String interfaceName, String ipAddress, String ipCountry, String ipArea, String ipProvince, String ipCity, String uuid, String operateId, String costTime, String appId) {
-            }
-
-        };
+        return null;
     }
 
 }

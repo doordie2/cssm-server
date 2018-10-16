@@ -45,7 +45,7 @@
 		<module>cssm-application</module>
 		<module>cssm-api</module>
 		<module>cssm-provider</module>
-		<module>cssm-brige</module><module>cssm-schedule</module>
+		<module>cssm-brige</module>
 	</modules>
 
     <dependencyManagement>

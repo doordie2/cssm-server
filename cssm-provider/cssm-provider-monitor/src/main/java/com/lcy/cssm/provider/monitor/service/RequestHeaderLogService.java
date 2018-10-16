@@ -60,4 +60,13 @@ public class RequestHeaderLogService {
         tbRequestHeaderLog.setAppId(appId);
         requestHeaderLogMapper.insertRequestHeaderLog(tbRequestHeaderLog);
     }
+
+    /**
+     * 清除请求头日志
+     */
+    @RequestMapping(value = "/deleteRequestHeaderLog", method = RequestMethod.GET)
+    public void requestLogClean(){
+        requestHeaderLogMapper.deleteRequestHeaderLog();
+    }
+
 }

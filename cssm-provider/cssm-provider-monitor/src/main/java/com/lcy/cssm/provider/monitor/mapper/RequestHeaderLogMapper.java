@@ -18,4 +18,9 @@ public interface RequestHeaderLogMapper {
      * @param tbRequestHeaderLog
      */
     void insertRequestHeaderLog(@Param("tbRequestHeaderLog") TbRequestHeaderLog tbRequestHeaderLog);
+
+    /**
+     * 清除请求日志
+     */
+    void deleteRequestHeaderLog();
 }

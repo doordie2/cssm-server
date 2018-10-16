@@ -45,4 +45,10 @@
         now()
         )
     </insert>
+
+    <delete id = "deleteRequestHeaderLog">
+        DELETE FROM tb_request_header_log
+        where
+          date(create_time)>=DATE_SUB(CURDATE(), INTERVAL 7 DAY)
+    </delete>
 </mapper>

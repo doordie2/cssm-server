@@ -24,4 +24,13 @@ public class UserController extends BaseController {
     public TbUserInfo getUserInfo(){
         return userFacade.getUserInfo();
     }
+
+    /**
+     * 是否存活
+     * @return
+     */
+    @RequestMapping(value = "/checkAlive", method = RequestMethod.GET)
+    public Boolean checkAlive(){
+        return true;
+    }
 }

@@ -40,4 +40,10 @@ public interface RequestHeaderLogFacade {
                                 @RequestParam(value = "ipProvince", required = false) String ipProvince, @RequestParam(value = "ipCity", required = false) String ipCity,
                                 @RequestParam(value = "uuid", required = false) String uuid, @RequestParam(value = "operateId", required = false) String operateId,
                                 @RequestParam(value = "costTime", required = false) String costTime, @RequestParam(value = "appId", required = false) String appId);
+
+    /**
+     * 清除请求头日志
+     */
+    @RequestMapping(value = "/provider/log/deleteRequestHeaderLog", method = RequestMethod.GET)
+    void requestLogClean();
 }
