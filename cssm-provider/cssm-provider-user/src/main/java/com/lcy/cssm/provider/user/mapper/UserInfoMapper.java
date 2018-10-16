@@ -1,10 +1,8 @@
 package com.lcy.cssm.provider.user.mapper;
 
-import com.lcy.cssm.support.user.form.BackUsersForm;
+import com.lcy.cssm.support.user.po.TbUserInfo;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * @Author: 王培
@@ -14,4 +12,6 @@ import java.util.List;
 @Mapper
 public interface UserInfoMapper {
 
+    @Select("select * from tb_user limit 1")
+    TbUserInfo getUserInfo();
 }

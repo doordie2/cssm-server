@@ -1,0 +1,26 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.lcy.cssm</groupId>
+		<artifactId>cssm-provider</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.lcy.cssm.provider</groupId>
+	<artifactId>cssm-provider-monitor</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>cssm-provider-monitor</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.lcy.cssm.support</groupId>
+			<artifactId>cssm-support-monitor</artifactId>
+			<version>${cssm-support-monitor.version}</version>
+		</dependency>
+	</dependencies>
+
+</project>

@@ -26,8 +26,10 @@
 		<cssm-common-provider.version>1.0-SNAPSHOT</cssm-common-provider.version>
 
 		<cssm-support-user.version>1.0-SNAPSHOT</cssm-support-user.version>
+        <cssm-support-monitor.version>1.0-SNAPSHOT</cssm-support-monitor.version>
 
 		<cssm-api-user.version>1.0-SNAPSHOT</cssm-api-user.version>
+        <cssm-api-monitor.version>1.0-SNAPSHOT</cssm-api-monitor.version>
 
 		<cssm-brige-mq.version>1.0-SNAPSHOT</cssm-brige-mq.version>
 

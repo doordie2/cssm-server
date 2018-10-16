@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mcilife.zlnsh.provider.monitor.mapper.RequestHeaderLogMapper">
+
+
+    <insert id="insertRequestHeaderLog">
+        insert into tb_request_header_log
+        (
+        app_id,
+        user_os,
+        os_version,
+        app_version,
+        agent_model,
+        user_agent,
+        agent_num,
+        interface_name,
+        ip_address,
+        ip_country,
+        ip_area,
+        ip_province,
+        ip_city,
+        uuid,
+        operate_id,
+        cost_time,
+        create_time,
+        update_time
+        )
+        VALUES
+        (
+        #{tbRequestHeaderLog.appId,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.userOs,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.osVersion,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.appVersion,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.agentModel,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.userAgent,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.agentNum,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.interfaceName,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.ipAddress,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.ipCountry,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.ipArea,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.ipProvince,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.ipCity,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.uuid,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.operateId,jdbcType=VARCHAR},
+        #{tbRequestHeaderLog.costTime,jdbcType=VARCHAR},
+        now(),
+        now()
+        )
+    </insert>
+
+</mapper>

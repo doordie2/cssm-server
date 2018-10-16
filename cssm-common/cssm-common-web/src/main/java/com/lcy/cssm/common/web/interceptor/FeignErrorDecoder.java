@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * feign的异常解析
  *
- * @auther 王培
+ * @auther lcy
  * @create 2017-08-04 13:51
  */
 @Configuration

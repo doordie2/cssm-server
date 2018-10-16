@@ -7,8 +7,6 @@ import com.lcy.cssm.api.user.facade.UserFacade;
 import com.lcy.cssm.brige.mq.facade.LogMqBrigeFacade;
 import com.lcy.cssm.common.base.constant.HttpConstant;
 import com.lcy.cssm.common.base.util.StopWatchUtil;
-import com.lcy.cssm.common.web.annotation.HistoryCheck;
-import com.lcy.cssm.support.user.dto.UserInfoDTO;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.MDC;
@@ -16,7 +14,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -78,22 +75,6 @@ public class BaseInterceptor extends HandlerInterceptorAdapter {
         request.setAttribute("appType", headerInfo.getOrDefault("apptype","2.1.0"));
         request.setAttribute("environment", environment);
         // 只有返回true才会继续向下执行，返回false取消当前请求
-
-        try{
-            HistoryCheck historyCheck = ((HandlerMethod) handler).getMethodAnnotation(HistoryCheck.class);
-            if (historyCheck != null) {
-                Integer historyId = Integer.valueOf(operator.substring(operator.lastIndexOf("/")+1));
-                String historyType = historyCheck.type();
-                UserInfoDTO userInfoDTO = userFacade.getUserInfoByToken(headerInfo.get("operatertoken"));
-                Integer userId = null ;
-                if(userInfoDTO!=null){
-                    userId = userInfoDTO.getUserId();
-                }
-            }
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-
         return true;
     }
 

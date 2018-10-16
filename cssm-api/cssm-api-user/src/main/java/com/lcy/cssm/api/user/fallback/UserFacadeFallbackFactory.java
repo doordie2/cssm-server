@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 public class UserFacadeFallbackFactory implements FallbackFactory<UserFacade> {
     private static final Logger logger = LoggerFactory.getLogger(UserFacadeFallbackFactory.class);
 
-
     @Override
     public UserFacade create(Throwable throwable) {
         logger.info("fallback; reason was: {}", throwable.getMessage());
