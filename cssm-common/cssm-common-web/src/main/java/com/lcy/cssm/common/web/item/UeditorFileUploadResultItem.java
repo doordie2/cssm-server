@@ -1,7 +1,7 @@
 package com.lcy.cssm.common.web.item;
 /**
  * ueditor上传文件成功后返回的对象item
- * @auther 王培
+ * @auther lcy
  * @create 2016-12-03 13:05
  */
 public class UeditorFileUploadResultItem {

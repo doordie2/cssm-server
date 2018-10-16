@@ -28,7 +28,7 @@ import java.util.UUID;
 /**
  * 基础interceptor，每个请求都会调用
  *
- * @author 王培
+ * @author lcy
  * @create 2017-05-03 14:26
  **/
 public class BaseInterceptor extends HandlerInterceptorAdapter {

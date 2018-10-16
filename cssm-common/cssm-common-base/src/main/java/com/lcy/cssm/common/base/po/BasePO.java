@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * 数据库基础属性
  *
- * @author 王培
+ * @author lcy
  * @create 2017-04-21 23:36
  **/
 public class BasePO implements Serializable {

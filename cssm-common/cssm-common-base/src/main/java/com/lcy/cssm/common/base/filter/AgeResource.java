@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author : 王培
+ * @author : lcy
  * @create : 2017-11-12 14:59
  * 描述 ：年龄计算注解
  *

@@ -1,7 +1,7 @@
 package com.lcy.cssm.common.base.po;
 
 /**
- * @Author: 王培
+ * @Author: lcy
  * @Date: 2018/5/24 15:01
  * @Description: 多媒体模型，包括图片，视频，音频
  */

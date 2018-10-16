@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 推送类别
- * @author 王培
+ * @author lcy
  * @create 2017-08-03 10:45
  **/
 public enum AliyunPushTypeEnum {

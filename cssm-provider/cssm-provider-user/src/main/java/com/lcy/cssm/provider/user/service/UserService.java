@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Author: 王培
+ * @Author: lcy
  * @Date: 2018/5/10 18:46
  * @Description: 用户服务类
  */

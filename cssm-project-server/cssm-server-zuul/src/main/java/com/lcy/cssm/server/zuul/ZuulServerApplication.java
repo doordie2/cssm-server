@@ -11,7 +11,7 @@ import org.springframework.web.filter.CorsFilter;
 /**
  * zuul网关
  *
- * @author 王培
+ * @author lcy
  * @create 2017-05-16 14:52
  **/
 @SpringBootApplication

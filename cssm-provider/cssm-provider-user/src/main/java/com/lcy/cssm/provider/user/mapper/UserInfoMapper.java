@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 /**
- * @Author: 王培
+ * @Author: lcy
  * @Date: 2018/5/10 17:43
  * @Description: 用户信息的mapper
  */

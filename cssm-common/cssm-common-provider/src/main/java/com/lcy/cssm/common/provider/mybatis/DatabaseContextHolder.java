@@ -3,7 +3,7 @@ package com.lcy.cssm.common.provider.mybatis;
 /**
  * 指定数据源
  *
- * @author 王培
+ * @author lcy
  * @create 2017-04-26 21:15
  **/
 public class DatabaseContextHolder {

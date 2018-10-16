@@ -1,7 +1,7 @@
 package com.lcy.cssm.common.web.wechat;
 
 /**
- * @Author: 王培
+ * @Author: lcy
  * @Date: 2018/6/25 09:49
  * @Description:
  */

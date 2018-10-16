@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 邮件模板状态
- * @author 王培
+ * @author lcy
  * @create 2017-08-03 10:45
  **/
 public enum MailTemplateEnum {

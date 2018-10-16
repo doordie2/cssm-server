@@ -3,7 +3,7 @@ package com.lcy.cssm.common.base.exceptions;
 /**
  * 要feign处理过的异常，是provider里面抛出来的
  *
- * @auther 王培
+ * @auther lcy
  * @create 2017-08-04 14:32
  */
 public class McFeignException extends RuntimeException{

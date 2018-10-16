@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 /**
  * 数字工具类
- * @author 王培
+ * @author lcy
  * @create 2017-04-21 23:36
  **/
 public class NumberUtil {

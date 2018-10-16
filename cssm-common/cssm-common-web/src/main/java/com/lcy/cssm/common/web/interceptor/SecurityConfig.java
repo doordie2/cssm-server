@@ -8,7 +8,7 @@ package com.lcy.cssm.common.web.interceptor;
 ///**
 // * 安全校验
 // *
-// * @author 王培
+// * @author lcy
 // * @create 2017-05-26 15:24
 // **/
 //public class SecurityConfig extends WebSecurityConfigurerAdapter {

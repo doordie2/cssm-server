@@ -8,7 +8,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 /**
  * redis处理session配置
  *
- * @auther 王培
+ * @auther lcy
  * @create 2017-08-09 11:13
  */
 @Configuration

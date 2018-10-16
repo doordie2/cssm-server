@@ -32,7 +32,6 @@
 			<version>${cssm-api-monitor.version}</version>
 		</dependency>
 
-
 		<dependency>
 			<groupId>com.lcy.cssm.brige</groupId>
 			<artifactId>cssm-brige-mq</artifactId>

@@ -4,7 +4,7 @@ import org.springframework.util.StopWatch;
 
 /**
  * 记录一个请求执行的时间
- * @author 王培
+ * @author lcy
  * @create 2016-12-01 18:15
  */
 public class StopWatchUtil {

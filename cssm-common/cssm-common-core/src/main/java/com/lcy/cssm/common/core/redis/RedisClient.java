@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 /**
  * redis客户端类
  *
- * @auther 王培
+ * @auther lcy
  * @create 2017-08-09 13:32
  */
 @Service

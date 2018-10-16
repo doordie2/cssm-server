@@ -7,7 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 用户模块错误码返回类
- * @author 王培
+ * @author lcy
  * @create 2016-12-01 18:45
  **/
 public enum AuthResultCode implements ResultCode {

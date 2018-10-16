@@ -3,7 +3,7 @@ package com.lcy.cssm.common.base.exceptions;
 
 /**
  * 结果码接口，所有结果码枚举都需要实现该接口
- * @author 王培
+ * @author ；lcy
  * @create 2017-07-16 17:15
  */
 public interface ResultCode {

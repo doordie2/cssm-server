@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * 有此注解的需要校验用户
- * @author 王培
+ * @author lcy
  * @create 2017-04-21 23:36
  **/
 @Target({ElementType.METHOD})

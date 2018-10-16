@@ -36,7 +36,7 @@ import java.util.Map;
 /**
  * redis配置类
  *
- * @auther 王培
+ * @auther lcy
  * @create 2017-08-09 11:21
  */
 @Configuration

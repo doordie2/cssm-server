@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 /**
  * 自定义Redis序列化
  *
- * @auther 王培
+ * @auther lcy
  * @create 2017-08-09 11:30
  */
 public class EntityRedisSerializer<T> implements RedisSerializer<T> {

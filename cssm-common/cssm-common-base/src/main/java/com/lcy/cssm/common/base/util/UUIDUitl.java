@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
  * 随机数工具类
- * @author 王培
+ * @author lcy
  * @create 2017-04-21 23:36
  **/
 public class UUIDUitl {

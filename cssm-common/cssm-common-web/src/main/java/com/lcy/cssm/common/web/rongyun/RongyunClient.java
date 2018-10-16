@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Author: 王培
+ * @Author: lcy
  * @Date: 2018/5/16 15:17
  * @Description:
  */

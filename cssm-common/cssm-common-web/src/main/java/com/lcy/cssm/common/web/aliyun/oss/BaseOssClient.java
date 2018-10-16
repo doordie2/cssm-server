@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * oss配置
  *
- * @author 王培
+ * @author lcy
  * @create 2017-10-20 12:45
  */
 @Configuration

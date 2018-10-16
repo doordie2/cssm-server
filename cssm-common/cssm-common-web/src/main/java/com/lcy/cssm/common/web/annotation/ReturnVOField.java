@@ -5,7 +5,7 @@ import com.lcy.cssm.common.base.constant.aliyun.AliyunBucketEnum;
 /**
  * 返回数据
  *
- * @author 王培
+ * @author lcy
  * @create 2017-12-10 23:15
  **/
 public @interface ReturnVOField {

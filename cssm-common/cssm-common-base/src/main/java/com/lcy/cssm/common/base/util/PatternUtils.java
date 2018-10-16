@@ -7,7 +7,7 @@ import java.util.regex.PatternSyntaxException;
 /**
  * 正则表达式辅助类
  *
- * @author 王培
+ * @author lcy
  * @create 2018-03-26 10:54
  */
 public class PatternUtils {

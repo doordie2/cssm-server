@@ -33,6 +33,8 @@
 
 		<cssm-brige-mq.version>1.0-SNAPSHOT</cssm-brige-mq.version>
 
+		<cssm-provider-monitor.version.>1.0-SNAPSHOT</cssm-provider-monitor.version.>
+
 
     </properties>
 
@@ -43,7 +45,7 @@
 		<module>cssm-application</module>
 		<module>cssm-api</module>
 		<module>cssm-provider</module>
-		<module>cssm-brige</module>
+		<module>cssm-brige</module><module>cssm-schedule</module>
 	</modules>
 
     <dependencyManagement>

@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 日志模块auth配置
  *
- * @author 王培
+ * @author lcy
  * @create 2017-05-26 09:01
  **/
 @Configuration

@@ -20,7 +20,7 @@ import java.util.Objects;
  * 参数检查断言工具类，可以减少一些<code>if</code>代码逻辑<br>
  * 当断言不成立时，抛出指定错误代码的XkException异常
  *
- * @auther 王培
+ * @auther lcy
  * @create 2016-12-01 09:06
  */
 public final class AssertUtil {

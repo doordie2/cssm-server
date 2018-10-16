@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 /**
  * 后台基础控制器
- * @author 王培
+ * @author
  * @create 2016-12-03 13:14
  */
 public class BaseController {

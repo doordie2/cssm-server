@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * 老的数据库基础属性，老的数据库id的是32位字符串
  *
- * @author 王培
+ * @author lcy
  * @create 2017-04-21 23:36
  **/
 public class OldBasePO implements Serializable {

@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 /**
  * 日期工具类
  *
- * @author 王培
+ * @author lcy
  * @create 2017-04-21 23:36
  **/
 public class DateUtils extends org.apache.commons.lang3.time.DateUtils {

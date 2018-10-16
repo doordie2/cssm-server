@@ -3,7 +3,7 @@ package com.lcy.cssm.common.base.exceptions;
 
 /**
  *  业务异常
- * @author 王培
+ * @author lcy
  * @create 2016-12-01 17:15
  */
 public class McException extends RuntimeException {

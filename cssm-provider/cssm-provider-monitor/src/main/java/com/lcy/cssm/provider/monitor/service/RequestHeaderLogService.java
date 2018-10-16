@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * 请求头信息日志service
  *
- * @auther 王培
+ * @auther lcy
  * @create 2017-09-30 12:32
  */
 @RestController

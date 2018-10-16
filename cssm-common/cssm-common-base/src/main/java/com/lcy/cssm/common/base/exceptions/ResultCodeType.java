@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 结果码类型
- * @author 王培
+ * @author lcy
  * @create 2017-07-16 17:15
  */
 public enum ResultCodeType {

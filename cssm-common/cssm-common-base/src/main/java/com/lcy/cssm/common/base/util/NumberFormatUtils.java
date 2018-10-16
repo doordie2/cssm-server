@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * 数字格式化工具类
- * @author 王培
+ * @author lcy
  * @create 2017-04-21 23:36
  **/
 

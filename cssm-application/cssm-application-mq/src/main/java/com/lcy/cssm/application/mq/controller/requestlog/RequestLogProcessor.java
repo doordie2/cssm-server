@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 日志peocessor
- * @auther 王培
+ * @auther lcy
  * @create 2017-09-29 11:10
  */
 @Configuration

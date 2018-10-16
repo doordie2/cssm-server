@@ -10,7 +10,7 @@ import java.util.Random;
 
 /**
  * 通用工具类(提供一些常用而不好归类的方法)
- * @author 王培
+ * @author lcy
  * @create 2017-04-21 23:36
  **/
 public class CommonUtils {

@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * 基础业务模块适配
  *
- * @author 王培
+ * @author lcy
  * @create 2017-08-02 21:47
  **/
 @Configuration

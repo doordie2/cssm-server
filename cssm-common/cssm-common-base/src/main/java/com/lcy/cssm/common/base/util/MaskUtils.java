@@ -3,7 +3,7 @@ package com.lcy.cssm.common.base.util;
 
 /**
  * 隐藏信息辅助类
- * @author 王培
+ * @author lcy
  * @create 2017-04-21 23:36
  **/
 public class MaskUtils {

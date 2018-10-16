@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * 消息提醒类型
  *
- * @author 王培
+ * @author lcy
  * @create 2018-02-01 13:46
  */
 public enum NotifyTypeEnum {

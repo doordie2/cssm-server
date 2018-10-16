@@ -6,7 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * 日志模块错误码返回类
- * @author 王培
+ * @author lcy
  * @create 2017-08-12 18:45
  **/
 public enum MonitorResultCode implements ResultCode {

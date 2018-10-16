@@ -4,7 +4,7 @@ import com.lcy.cssm.common.base.po.BasePO;
 
 /**
  * 请求头里面的信息
- * @auther 王培
+ * @auther lcy
  * @create 2016-12-01 19:02
  */
 public class TbRequestHeaderLog extends BasePO {

@@ -12,14 +12,18 @@ import java.sql.SQLException;
 
 /**
  * 自定义Boolean类型转换器
- * @author 王培
+ * @author lcy
  * @create 2016-12-01 18:45
  **/
 @SuppressWarnings("rawtypes")
 public class BooleanTypeHandler implements TypeHandler {
 
-	/* (non-Javadoc)
-	 * @see org.apache.ibatis.type.TypeHandler#getResult(java.sql.ResultSet, java.lang.String)
+	/**
+	 * 转换器
+	 * @param arg0
+	 * @param arg1
+	 * @return
+	 * @throws SQLException
 	 */
 	@Override
 	public Object getResult(ResultSet arg0, int arg1) throws SQLException {

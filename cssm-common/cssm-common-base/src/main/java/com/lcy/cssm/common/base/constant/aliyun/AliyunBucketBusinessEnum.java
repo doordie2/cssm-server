@@ -5,7 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
  * 业务关联的bucket
  *
- * @author 王培
+ * @author lcy
  * @create 2017-08-03 10:45
  **/
 public enum AliyunBucketBusinessEnum {

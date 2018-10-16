@@ -13,7 +13,7 @@ import java.util.HashSet;
 /**
  * 定制化mybatis配置,Configuration里面的每个参数都可以重新设置
  *
- * @author 王培
+ * @author lcy
  * @create 2017-05-02 21:33
  **/
 @Repository
