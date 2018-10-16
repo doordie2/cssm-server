@@ -1,4 +1,4 @@
-package com.lcy.cssm.application.mq.controller.log;
+package com.lcy.cssm.application.mq.controller.requestlog;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -14,10 +14,10 @@ import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.messaging.Message;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +28,7 @@ import java.util.Map;
  * @auther 王培
  * @create 2017-09-29 11:25
  */
-@EnableBinding(RequestLogProcessor.class)
+@Component
 public class RequestLogCustomer {
     private static final Logger logger = LoggerFactory.getLogger(RequestLogCustomer.class);
 
@@ -38,10 +38,10 @@ public class RequestLogCustomer {
     @Autowired
     private UserFacade userFacade;
 
-    @StreamListener(RequestLogProcessor.INPUT)
-    public void input(Message<String> message){
-        logger.info("消息开始消费");
-        JSONObject headerInfo =  JSON.parseObject(message.getPayload());
+    @RabbitListener(queues = "requestLog")
+    public void input(Map<String,String> message){
+        logger.info("请求日志记录开始");
+        JSONObject headerInfo=JSONObject.parseObject(JSON.toJSONString(message));
         //请求的query
         Map<String, String> querys = new HashMap<String, String>();
         querys.put("ip", headerInfo.getString("ipAddress"));
@@ -62,7 +62,6 @@ public class RequestLogCustomer {
                     headerInfo.put("city",dataObject.getString("city"));
                 }
             }
-
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -74,15 +73,26 @@ public class RequestLogCustomer {
             }
         }
 
-        //浏览记录
-
         if(headerInfo.getString("interFaceName").startsWith("")){
 
         }
 
-        requestHeaderLogFacade.insertRequestHeaderLog(headerInfo.getString("user-os"),headerInfo.getString("os-version"),headerInfo.getString("app-version"),
-                headerInfo.getString("agent-model"),headerInfo.getString("user-agent"),headerInfo.getString("agent-num"),headerInfo.getString("interFaceName"),
-                headerInfo.getString("ipAddress"),headerInfo.getString("country"),headerInfo.getString("area"),headerInfo.getString("province"),
-                headerInfo.getString("city"),headerInfo.getString("uuid"),String.valueOf(userId),headerInfo.getString("costTime"),headerInfo.getString("app-id"));
+       requestHeaderLogFacade.insertRequestHeaderLog(
+                headerInfo.getString("user-os"),
+                headerInfo.getString("os-version"),
+                headerInfo.getString("app-version"),
+                headerInfo.getString("agent-model"),
+                headerInfo.getString("user-agent"),
+                headerInfo.getString("agent-num"),
+                headerInfo.getString("interFaceName"),
+                headerInfo.getString("ipAddress"),
+                headerInfo.getString("country"),
+                headerInfo.getString("area"),
+                headerInfo.getString("province"),
+                headerInfo.getString("city"),
+                headerInfo.getString("uuid"),
+                String.valueOf(userId),
+                headerInfo.getString("costTime"),
+                headerInfo.getString("app-id"));
     }
 }

@@ -1,4 +1,4 @@
-package com.lcy.cssm.application.mq.controller.log;
+package com.lcy.cssm.application.mq.controller.requestlog;
 
 import com.lcy.cssm.common.web.base.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 /**
- * @Author: 王培
+ * @Author: lcy
  * @Date: 2018/7/3 14:35
  * @Description:
  */
