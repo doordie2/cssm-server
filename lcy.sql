@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2018-10-16 13:10:48
+Date: 2018-10-16 16:10:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,6 +21,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `tb_request_header_log`;
 CREATE TABLE `tb_request_header_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `app_id` varchar(11) DEFAULT NULL,
   `user_os` varchar(16) DEFAULT NULL COMMENT '用户设备的操作系统',
   `os_version` varchar(8) DEFAULT NULL COMMENT '系统版本号',
   `app_version` varchar(8) DEFAULT NULL COMMENT 'app版本号',
@@ -39,7 +40,7 @@ CREATE TABLE `tb_request_header_log` (
   `operate_id` varchar(32) DEFAULT NULL COMMENT '操作人（医生或用户）id',
   `cost_time` varchar(10) DEFAULT NULL COMMENT '请求花费时间,单位ms',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1229866 DEFAULT CHARSET=utf8 COMMENT='请求头信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=1229868 DEFAULT CHARSET=utf8 COMMENT='请求头信息表';
 
 -- ----------------------------
 -- Table structure for tb_user
