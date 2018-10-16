@@ -1,8 +1,8 @@
 package com.lcy.cssm.support.user.vo;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.mcilife.zlnsh.common.base.filter.StringToList;
-import com.mcilife.zlnsh.common.base.filter.UrlResource;
+import com.lcy.cssm.common.base.filter.StringToList;
+import com.lcy.cssm.common.base.filter.UrlResource;
 
 import java.util.Date;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 /**
 
  /**
- * @Author: 王培
+ * @Author: lcy
  * @Date: 2018/5/10 17:22
  * @Description: 用户表
  */

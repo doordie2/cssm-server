@@ -3,20 +3,12 @@ package com.lcy.cssm.common.web.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.Feature;
-import com.mcilife.zlnsh.api.interaction.facade.MomentFacade;
-import com.mcilife.zlnsh.api.operation.facade.v2.ActivityFacade;
-import com.mcilife.zlnsh.api.operation.facade.v2.ContentInfoFacade;
-import com.mcilife.zlnsh.api.user.facade.UserFacade;
-import com.mcilife.zlnsh.api.user.facade.v2.UserLikeFacade;
-import com.mcilife.zlnsh.brige.mq.facade.LogMqBrigeFacade;
-import com.mcilife.zlnsh.common.base.constant.HttpConstant;
-import com.mcilife.zlnsh.common.base.util.StopWatchUtil;
-import com.mcilife.zlnsh.common.web.annotation.HistoryCheck;
-import com.mcilife.zlnsh.support.interaction.dto.MomentDTO;
-import com.mcilife.zlnsh.support.operation.dto.v2.ActivityDTO;
-import com.mcilife.zlnsh.support.operation.dto.v2.ContentInfoDTO;
-import com.mcilife.zlnsh.support.user.dto.UserBrowseHistoryDTO;
-import com.mcilife.zlnsh.support.user.dto.UserInfoDTO;
+import com.lcy.cssm.api.user.facade.UserFacade;
+import com.lcy.cssm.brige.mq.facade.LogMqBrigeFacade;
+import com.lcy.cssm.common.base.constant.HttpConstant;
+import com.lcy.cssm.common.base.util.StopWatchUtil;
+import com.lcy.cssm.common.web.annotation.HistoryCheck;
+import com.lcy.cssm.support.user.dto.UserInfoDTO;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.MDC;
@@ -49,19 +41,7 @@ public class BaseInterceptor extends HandlerInterceptorAdapter {
     private LogMqBrigeFacade logMqBrigeFacade;
 
     @Autowired
-    private UserLikeFacade userLikeFacade;
-
-    @Autowired
     private UserFacade userFacade;
-
-    @Autowired
-    private ActivityFacade activityFacade;
-
-    @Autowired
-    private MomentFacade momentFacade;
-
-    @Autowired
-    private ContentInfoFacade contentInfoFacade;
 
     @Value("${environment}")
     private String environment;
@@ -108,36 +88,6 @@ public class BaseInterceptor extends HandlerInterceptorAdapter {
                 Integer userId = null ;
                 if(userInfoDTO!=null){
                     userId = userInfoDTO.getUserId();
-                }
-//                UserBrowseHistoryDTO userBrowseHistoryDTO = userLikeFacade.getUserBrowseHistory(userId, historyId, historyType,headerInfo.get("agent-num"));
-//                if (userBrowseHistoryDTO == null) {
-                    UserBrowseHistoryDTO userBrowseHistoryDTO2 = new UserBrowseHistoryDTO();
-                    //没有记录则增加一条,或者浏览间隔超过一天
-                    userBrowseHistoryDTO2.setCreateby(String.valueOf(userId));
-                    userBrowseHistoryDTO2.setHistoryId(historyId);
-                    userBrowseHistoryDTO2.setHistoryType(historyType);
-                    userBrowseHistoryDTO2.setUserId(userId);
-                    userBrowseHistoryDTO2.setAgentNum(headerInfo.get("agent-num"));
-                    userLikeFacade.insertUserBrowseHistory(userBrowseHistoryDTO2);
-//                } else if (!DateUtils.isOverIntervalLimit(new Date(), userBrowseHistoryDTO.getUpdateDate(), CommonConstant.ONE)) {
-//                    //如果记录时间间隔在一天之内，修改浏览时间
-//                    userLikeFacade.updateUserBrowseHistory(userBrowseHistoryDTO);
-//                }
-
-                //修改各个内容的浏览量
-                if (historyType.equals("content")) {
-                    ContentInfoDTO contentInfoDTO = contentInfoFacade.getContentInfoById(historyId);
-                    contentInfoDTO.setViewCount(contentInfoDTO.getViewCount() + 1);
-                    contentInfoFacade.updateContentInfo(contentInfoDTO);
-                }  else if (historyType.equals("activity")) {
-                    ActivityDTO activityDTO = activityFacade.getActivityInfoById(historyId);
-                    activityDTO.setViewCount(activityDTO.getViewCount() + 1);
-
-                    activityFacade.updateActivity(activityDTO);
-                } else if (historyType.equals("moment")) {
-                    MomentDTO momentDTO = momentFacade.getMomentById(historyId);
-                    momentDTO.setPageViews(momentDTO.getPageViews() + 1);
-                    momentFacade.updateMoment(momentDTO);
                 }
             }
         }catch(Exception e){

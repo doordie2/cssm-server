@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * druid数据源监控配置
  *
- * @author 王培
+ * @author lcy
  * @create 2017-05-12 13:34
  **/
 @Configuration

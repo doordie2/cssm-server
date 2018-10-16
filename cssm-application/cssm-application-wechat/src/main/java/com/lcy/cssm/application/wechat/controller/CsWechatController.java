@@ -1,9 +1,11 @@
 package com.lcy.cssm.application.wechat.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.mcilife.zlnsh.application.wechat.wechat.*;
-import com.mcilife.zlnsh.common.web.annotation.PageSessionCheck;
-import com.mcilife.zlnsh.common.web.base.BaseController;
+import com.lcy.cssm.application.wechat.wechat.MessageUtil;
+import com.lcy.cssm.application.wechat.wechat.ReplyTextMessage;
+import com.lcy.cssm.application.wechat.wechat.SignUtil;
+import com.lcy.cssm.common.web.annotation.PageSessionCheck;
+import com.lcy.cssm.common.web.base.BaseController;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import org.apache.commons.lang3.StringUtils;
@@ -21,7 +23,7 @@ import java.io.PrintWriter;
 import java.util.Map;
 
 /**
- * @Author: 王培
+ * @Author: lcy
  * @Date: 2018/5/23 10:25
  * @Description:
  */

@@ -4,8 +4,6 @@ import com.lcy.cssm.api.user.configuration.UserConfiguration;
 import com.lcy.cssm.api.user.fallback.UserFacadeFallbackFactory;
 import com.lcy.cssm.support.user.dto.UserInfoDTO;
 import com.lcy.cssm.support.user.form.BackUsersForm;
-import com.lcy.cssm.support.user.po.TbUserInfo;
-import com.lcy.cssm.support.user.result.UserAttentionResult;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,16 +20,13 @@ import java.util.Map;
  * @author 王培
  * @create 2017-05-19 13:33
  **/
-@FeignClient(name = "zlnsh-provider-user", configuration = UserConfiguration.class, fallbackFactory = UserFacadeFallbackFactory.class)
+@FeignClient(name = "cssm-provider-user", configuration = UserConfiguration.class, fallbackFactory = UserFacadeFallbackFactory.class)
 @RequestMapping("/provider/user")
 public interface UserFacade {
 
 
     @RequestMapping(value = "/fixMomentCodeAndUniqueId", method = RequestMethod.POST)
     void fixMomentCodeAndUniqueId();
-
-    @RequestMapping(value = "/updateUserInfoTask", method = RequestMethod.POST)
-    void updateUserInfoTask(@RequestBody TbUserInfo tbUserInfo);
     /**
      * 根据token获取用户信息
      *
@@ -62,51 +57,8 @@ public interface UserFacade {
     @RequestMapping(value = "/pullBlackUser", method = RequestMethod.POST)
     void pullBlackUser(@RequestBody BackUsersForm backUsersForm);
 
-
-
-    @RequestMapping(value = "/listNoUniqueIdUser", method = RequestMethod.GET)
-    List<TbUserInfo> listNoUniqueIdUser();
-
-
-
     @RequestMapping(value = "/recommendUser", method = RequestMethod.POST)
     void recommendUser(@RequestBody BackUsersForm backUsersForm);
-
-
-    /**
-     * 根据微信的unionId获取用户信息
-     *
-     * @param unionId unionId
-     * @return 用户信息
-     */
-    @RequestMapping(value = "/getUserInfoByUnionId", method = RequestMethod.GET)
-    UserInfoDTO getUserInfoByUnionId(@RequestParam(value = "unionId") String unionId);
-
-    /**
-     * 根据微信的openId获取用户信息
-     *
-     * @param openId openId
-     * @return 用户信息
-     */
-    @RequestMapping(value = "/getUserInfoByOpenId", method = RequestMethod.GET)
-    UserInfoDTO getUserInfoByOpenId(@RequestParam(value = "openId") String openId);
-
-    /**
-     * 根据用户id获取用户信息
-     * @param userId
-     * @return
-     */
-    @RequestMapping(value = "/getUserInfoById", method = RequestMethod.GET)
-    UserInfoDTO getUserInfoById(@RequestParam(value = "userId") Integer userId);
-
-    /**
-     * 更新用户信息
-     *
-     * @param userInfoDTO 提交的更新信息
-     * @return 更新后的用户详情
-     */
-    @RequestMapping(value = "/updateUserInfo", method = RequestMethod.POST)
-    UserInfoDTO updateUserInfo(@RequestBody UserInfoDTO userInfoDTO);
 
     /**
      * 获得推荐用户
@@ -167,15 +119,6 @@ public interface UserFacade {
                               @RequestParam(value = "aliyunPushId") String aliyunPushId, @RequestParam(value = "userOs") String userOs,
                               @RequestParam(value = "agentModel") String agentModel, @RequestParam(value = "appVersion") String appVersion);
 
-    /**
-     * 关键字搜索用户信息
-     * @param keyWord
-     * @param offset
-     * @param limit
-     * @return
-     */
-    @RequestMapping(value = "/listUserInfoByKeyWord", method = RequestMethod.GET)
-    List<UserAttentionResult> listUserInfoByKeyWord(@RequestParam(value = "offset") Integer offset, @RequestParam(value = "limit") Integer limit, @RequestParam(value = "keyWord") String keyWord);
 
     @RequestMapping(value = "/cancelOrAttentWechat", method = RequestMethod.POST)
     void cancelOrAttentWechat(@RequestParam("openId") String openId, @RequestParam("wechatAttention") String wechatAttention);
@@ -189,62 +132,5 @@ public interface UserFacade {
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     UserInfoDTO logout(Integer userId);
-
-    /**
-     * 后台查询用户
-     * @param nickName
-     * @param phone   手机号
-     * @param startDate
-     * @param endDate
-     * @param province
-     * @param city
-     * @param phoneOs  微信，安卓，iOS
-     * @param offset
-     * @param limit
-     * @return
-     */
-    @RequestMapping(value = "/listUsersForAdmin", method = RequestMethod.GET)
-    List<UserInfoDTO> listUsersForAdmin(@RequestParam(value = "sex", required = false) String sex,
-                                        @RequestParam(value = "auth", required = false) String auth,
-                                        @RequestParam(value = "nickName", required = false) String nickName,
-                                        @RequestParam(value = "momentCode", required = false) String momentCode,
-                                        @RequestParam(value = "phone", required = false) String phone,
-                                        @RequestParam(value = "recommend", required = false) String recommend,
-                                        @RequestParam(value = "startDate", required = false) String startDate,
-                                        @RequestParam(value = "endDate", required = false) String endDate,
-                                        @RequestParam(value = "province", required = false) String province,
-                                        @RequestParam(value = "city", required = false) String city,
-                                        @RequestParam(value = "phoneOs", required = false) String phoneOs,
-                                        @RequestParam(value = "inblack", required = false) Integer inblack,
-                                        @RequestParam(value = "forbidden", required = false) Integer forbidden,
-                                        @RequestParam(value = "voType", required = false) String voType,
-                                        @RequestParam(value = "offset") Integer offset, @RequestParam(value = "limit") Integer limit);
-
-    /**
-     * 后台查询用户总数
-     * @param nickName
-     * @param phone   手机号
-     * @param startDate
-     * @param endDate
-     * @param province
-     * @param city
-     * @param phoneOs   微信，安卓，iOS
-     * @return
-     */
-    @RequestMapping(value = "/countUsersForAdmin", method = RequestMethod.GET)
-    Integer countUsersForAdmin(@RequestParam(value = "sex", required = false) String sex,
-                               @RequestParam(value = "auth", required = false) String auth,
-                               @RequestParam(value = "nickName", required = false) String nickName,
-                               @RequestParam(value = "momentCode", required = false) String momentCode,
-                               @RequestParam(value = "phone", required = false) String phone,
-                               @RequestParam(value = "recommend", required = false) String recommend,
-                               @RequestParam(value = "startDate", required = false) String startDate,
-                               @RequestParam(value = "endDate", required = false) String endDate,
-                               @RequestParam(value = "province", required = false) String province,
-                               @RequestParam(value = "city", required = false) String city,
-                               @RequestParam(value = "phoneOs", required = false) String phoneOs,
-                               @RequestParam(value = "inblack", required = false) Integer inblack,
-                               @RequestParam(value = "forbidden", required = false) Integer forbidden,
-                               @RequestParam(value = "voType", required = false) String voType);
 
 }

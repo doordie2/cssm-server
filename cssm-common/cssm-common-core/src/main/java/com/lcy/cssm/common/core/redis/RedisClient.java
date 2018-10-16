@@ -1,7 +1,7 @@
 package com.lcy.cssm.common.core.redis;
 
 import com.alibaba.fastjson.JSON;
-import com.mcilife.zlnsh.common.base.constant.CommonConstant;
+import com.lcy.cssm.common.base.constant.CommonConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
@@ -261,7 +261,7 @@ public class RedisClient {
                 RedisSerializer<String> serializer = redisTemplate.getStringSerializer();
                 connection.watch(serializer.serialize(key));
                 long len = connection.lLen(serializer.serialize(key));
-                if(len==CommonConstant.EIGHT){
+                if(len== CommonConstant.EIGHT){
                     connection.rPop(serializer.serialize(key));
                 }
                 connection.multi();

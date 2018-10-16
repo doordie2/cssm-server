@@ -1,7 +1,6 @@
 package com.lcy.cssm.common.base.util.string;
 
-
-import com.mcilife.zlnsh.common.base.util.Md5Util;
+import com.lcy.cssm.common.base.util.Md5Util;
 
 import java.io.UnsupportedEncodingException;
 import java.security.SignatureException;
@@ -9,7 +8,7 @@ import java.util.*;
 
 /**
  * 生成签名
- * @author 王培
+ * @author lcy
  * @create 2017-04-21 23:36
  **/
 public class Sign {

@@ -23,13 +23,25 @@
 		<cssm-common-base.version>1.0-SNAPSHOT</cssm-common-base.version>
 		<cssm-common-core.version>1.0-SNAPSHOT</cssm-common-core.version>
 		<cssm-common-web.version>1.0-SNAPSHOT</cssm-common-web.version>
+		<cssm-common-provider.version>1.0-SNAPSHOT</cssm-common-provider.version>
 
 		<cssm-support-user.version>1.0-SNAPSHOT</cssm-support-user.version>
+
+		<cssm-api-user.version>1.0-SNAPSHOT</cssm-api-user.version>
+
+		<cssm-brige-mq.version>1.0-SNAPSHOT</cssm-brige-mq.version>
+
+
     </properties>
 
     <modules>
 		<module>cssm-project-server</module>
-		<module>cssm-common</module><module>cssm-support</module><module>cssm-application</module><module>cssm-api</module>
+		<module>cssm-common</module>
+		<module>cssm-support</module>
+		<module>cssm-application</module>
+		<module>cssm-api</module>
+		<module>cssm-provider</module>
+		<module>cssm-brige</module>
 	</modules>
 
     <dependencyManagement>

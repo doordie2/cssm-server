@@ -3,7 +3,7 @@ package com.lcy.cssm.common.base.filter;
 import com.alibaba.fastjson.serializer.AfterFilter;
 import com.alibaba.fastjson.serializer.BeforeFilter;
 import com.alibaba.fastjson.serializer.SerializeFilter;
-import com.mcilife.zlnsh.common.base.constant.CommonConstant;
+import com.lcy.cssm.common.base.constant.CommonConstant;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
 
 
 /**
- * @author: 赵天增
+ * @author: lcy
  * @create : 2017/11/11
  * 描述：
  */

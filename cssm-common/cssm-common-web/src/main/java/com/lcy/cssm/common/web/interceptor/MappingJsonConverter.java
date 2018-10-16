@@ -5,9 +5,9 @@ package com.lcy.cssm.common.web.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.Feature;
-import com.mcilife.zlnsh.common.base.constant.CommonConstant;
-import com.mcilife.zlnsh.common.base.exceptions.CommonResult;
-import com.mcilife.zlnsh.common.web.item.UeditorFileUploadResultItem;
+import com.lcy.cssm.common.base.constant.CommonConstant;
+import com.lcy.cssm.common.base.exceptions.CommonResult;
+import com.lcy.cssm.common.web.item.UeditorFileUploadResultItem;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.MDC;
 import org.slf4j.Logger;

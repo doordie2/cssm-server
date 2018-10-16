@@ -1,8 +1,8 @@
 package com.lcy.cssm.common.base.util;
 
 import com.google.common.collect.Lists;
-import com.mcilife.zlnsh.common.base.constant.CommonConstant;
-import com.mcilife.zlnsh.common.base.constant.aliyun.AliyunBucketEnum;
+import com.lcy.cssm.common.base.constant.CommonConstant;
+import com.lcy.cssm.common.base.constant.aliyun.AliyunBucketEnum;
 import net.sf.cglib.beans.BeanMap;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -18,7 +18,7 @@ import java.util.function.Function;
 import static java.util.stream.Collectors.groupingBy;
 
 /**
- * @author : 赵天增
+ * @author : lcy
  * @create : 2017-10-26 16:54
  * 描述 ：bean工具类
  */

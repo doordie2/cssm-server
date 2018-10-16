@@ -3,20 +3,15 @@ package com.lcy.cssm.common.web.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.mcilife.zlnsh.api.user.facade.UserFacade;
-import com.mcilife.zlnsh.api.user.facade.v2.UserLikeFacade;
-import com.mcilife.zlnsh.common.base.constant.CommonConstant;
-import com.mcilife.zlnsh.common.base.constant.aliyun.AliyunBucketEnum;
-import com.mcilife.zlnsh.common.base.filter.*;
-import com.mcilife.zlnsh.common.base.util.DateUtils;
-import com.mcilife.zlnsh.common.web.annotation.ReturnVO;
-import com.mcilife.zlnsh.common.web.annotation.ReturnVOCheck;
-import com.mcilife.zlnsh.common.web.annotation.ReturnVOField;
-import com.mcilife.zlnsh.common.web.utils.CodeUtils;
-import com.mcilife.zlnsh.common.web.utils.ParamUtils;
-import com.mcilife.zlnsh.support.interaction.vo.v2.MomentCommentVO;
-import com.mcilife.zlnsh.support.user.dto.UserInfoDTO;
-import com.mcilife.zlnsh.support.user.result.v2.UserLikesResult;
+import com.lcy.cssm.api.user.facade.UserFacade;
+import com.lcy.cssm.common.base.constant.CommonConstant;
+import com.lcy.cssm.common.base.constant.aliyun.AliyunBucketEnum;
+import com.lcy.cssm.common.base.filter.*;
+import com.lcy.cssm.common.base.util.DateUtils;
+import com.lcy.cssm.common.web.annotation.ReturnVO;
+import com.lcy.cssm.common.web.annotation.ReturnVOCheck;
+import com.lcy.cssm.common.web.annotation.ReturnVOField;
+import com.lcy.cssm.common.web.utils.CodeUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -33,7 +28,7 @@ import java.lang.reflect.Field;
 import java.util.*;
 
 /**
- * @author : 赵天增
+ * @author : lcy
  * @create : 2017-12-11 14:57
  * 描述 ： 从指定的Object抽取参数
  */
@@ -44,16 +39,10 @@ public class ReturnVOAspect {
     @Autowired
     private CodeUtils codeUtils;
 
-    @Autowired
-    private UserLikeFacade userLikeFacade;
-
-    @Autowired
-    private UserFacade userFacade;
-
     @Value("${environment}")
     protected String environment;
 
-    @Pointcut("@annotation(com.mcilife.zlnsh.common.web.annotation.ReturnVOCheck)")
+    @Pointcut("@annotation(com.lcy.cssm.common.web.annotation.ReturnVOCheck)")
     public void controllerInteceptor() {
 
     }
@@ -140,7 +129,7 @@ public class ReturnVOAspect {
                             JSONObject jsonObject =  JSONObject.parseObject((String) field.get(value));
                             if(jsonObject.getString("url")!=null&&StringUtils.equals(CommonConstant.DEFAULT,jsonObject.getString("url"))){
                                 JSONObject newJsonObject = new JSONObject();
-                                newJsonObject.put("url",AliyunBucketEnum.getEnum(jsonObject.getString("bucket")).getUrl()+environment+"/"+jsonObject.getString("prefix")+jsonObject.getInteger("id"));
+                                newJsonObject.put("url", AliyunBucketEnum.getEnum(jsonObject.getString("bucket")).getUrl()+environment+"/"+jsonObject.getString("prefix")+jsonObject.getInteger("id"));
                                 temField.set(tempObject,  newJsonObject);
                             }else{
                                 temField.set(tempObject,  JSONObject.parseObject((String) field.get(value)));
@@ -148,37 +137,6 @@ public class ReturnVOAspect {
                         }else{
                             temField.set(tempObject,  JSONObject.parseObject((String) field.get(value)));
                         }
-                    }else if(temField.getAnnotation(MomentAvatarResource.class) != null){
-                        List<String> likeAvatarList = new ArrayList<>();
-                        List<UserLikesResult> userLikesResultList = userLikeFacade.listUserLikeByModuleTypeAndStatisticsTypeAndLikeId((Integer)field.get(value),
-                                "moment", "like", Integer.parseInt(CommonConstant.NUMBER_ZERO), CommonConstant.ONE_HUNDRED);
-                        for (UserLikesResult userLikesResult : userLikesResultList) {
-                            likeAvatarList.add(ParamUtils.setUserAvatarV2(userLikesResult));
-                            if(StringUtils.isNotBlank(voField.defaultValue())){
-                                if (likeAvatarList.size()==Integer.valueOf(voField.defaultValue())){
-                                    break;
-                                }
-                            }
-                        }
-                        temField.set(tempObject, likeAvatarList);
-                    }else if(temField.getAnnotation(MomentComment.class) != null){
-                        List<MomentCommentVO> momentCommentVOList = new ArrayList<>();
-                        if(StringUtils.isNotBlank((String)field.get(value))){
-                            JSONObject jsonObject = JSON.parseObject((String)field.get(value));
-                            MomentCommentVO momentCommentVO = new MomentCommentVO();
-                            //评论人
-                            UserInfoDTO userInfoDTO = userFacade.getUserInfoById(Integer.valueOf(jsonObject.getString("userId")));
-                            if(userInfoDTO!=null){
-                                momentCommentVO.setCommenterName(userInfoDTO.getNickname());
-                                momentCommentVO.setCommenterAvatar(ParamUtils.setUserAvatar(userInfoDTO.getAvatar()));
-                                momentCommentVO.setContent(jsonObject.getString("content"));
-                                momentCommentVO.setCommenterGender(userInfoDTO.getGender());
-                                momentCommentVO.setCommenterUniqueId(userInfoDTO.getUniqueId());
-                                momentCommentVO.setCommentId(Integer.valueOf(jsonObject.getString("id")));
-                                momentCommentVOList.add(momentCommentVO);
-                            }
-                        }
-                        temField.set(tempObject, momentCommentVOList);
                     }else if(temField.getAnnotation(NotNullToOne.class) != null){
                         if(field.get(value)!=null){
                             temField.set(tempObject, CommonConstant.NUMBER_ONE);

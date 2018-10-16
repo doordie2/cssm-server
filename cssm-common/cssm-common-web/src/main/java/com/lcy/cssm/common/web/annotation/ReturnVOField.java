@@ -1,6 +1,6 @@
 package com.lcy.cssm.common.web.annotation;
 
-import com.mcilife.zlnsh.common.base.constant.aliyun.AliyunBucketEnum;
+import com.lcy.cssm.common.base.constant.aliyun.AliyunBucketEnum;
 
 /**
  * 返回数据

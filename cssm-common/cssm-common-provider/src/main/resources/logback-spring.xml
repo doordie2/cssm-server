@@ -4,7 +4,7 @@
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
     <property name="LOG_HOME" value="logs"/>
     <springProperty  name="appName" source="spring.application.name"/>
-    <property name="APP_Name" value="zlnsh-provider/${appName}"/>
+    <property name="APP_Name" value="cssm-provider/${appName}"/>
     <!-- 控制台输出 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
@@ -50,7 +50,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.mcilife.zlnsh.provider">
+    <logger name="com.lcy.cssm.provider">
         <level value="DEBUG"/>
     </logger>
 

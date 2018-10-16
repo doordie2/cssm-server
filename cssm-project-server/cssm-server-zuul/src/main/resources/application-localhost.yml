@@ -27,28 +27,28 @@ spring:
 #Java.lang.IllegalStateException: getWriter() has already been called for this response
 zuul:
   routes:
-    zlnsh-application-user:
+    cssm-application-user:
       path: /user/**
       stripPrefix: false
-    zlnsh-application-common:
+    cssm-application-common:
       path: /common/**
       stripPrefix: false
-    zlnsh-application-operation:
+    cssm-application-operation:
       path: /operation/**
       stripPrefix: false
-    zlnsh-application-wechat:
+    cssm-application-wechat:
       path: /wechat/**
       stripPrefix: false
-    zlnsh-application-interaction:
+    cssm-application-interaction:
       path: /interaction/**
       stripPrefix: false
-    zlnsh-application-task:
+    cssm-application-task:
       path: /task/**
       stripPrefix: false
-    zlnsh-application-mq:
+    cssm-application-mq:
       path: /mq/**
       stripPrefix: false
-    zlnsh-application-third:
+    cssm-application-third:
       path: /third/**
       stripPrefix: false
   SendErrorFilter:

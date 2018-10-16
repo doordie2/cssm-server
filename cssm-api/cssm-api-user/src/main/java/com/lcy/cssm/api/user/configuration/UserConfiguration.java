@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 用户feignclient配置
- *
  * @author lcy
  * @create 2017-05-26 09:01
  **/

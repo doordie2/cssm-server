@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: cssm-server-config
+      username: server-config
+      password: 35446Q3QJS7UvVdN
+  application:
+    name: cssm-provider-user
+
+#eureka放在这里是因为config会从eureka里面读取
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://server-eureka:2lvoHcfXbXmTBvQm@172.16.2.133:1000/eureka
+  instance:
+      prefer-ip-address: true
+      instance-id: cssm-provider-user:${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}

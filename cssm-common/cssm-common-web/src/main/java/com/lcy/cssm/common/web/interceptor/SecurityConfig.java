@@ -1,4 +1,4 @@
-package com.lcy.cssm.common.web.interceptor;//package com.mcilife.zlnsh.common.web.interceptor;
+package com.lcy.cssm.common.web.interceptor;
 //
 //import org.springframework.context.annotation.Configuration;
 //import org.springframework.security.config.annotation.web.builders.WebSecurity;

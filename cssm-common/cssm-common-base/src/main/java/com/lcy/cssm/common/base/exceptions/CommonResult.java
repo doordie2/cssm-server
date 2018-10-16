@@ -2,7 +2,7 @@ package com.lcy.cssm.common.base.exceptions;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.mcilife.zlnsh.common.base.filter.ResourceValueFilter;
+import com.lcy.cssm.common.base.filter.ResourceValueFilter;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -11,7 +11,7 @@ import java.io.Serializable;
 /**
  * 返回类定义
  *
- * @author 王培
+ * @author lcy
  * @create 2017-07-16 17:15
  **/
 public class CommonResult implements Serializable {

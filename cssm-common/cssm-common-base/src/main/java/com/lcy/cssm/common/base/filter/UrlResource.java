@@ -1,7 +1,6 @@
 package com.lcy.cssm.common.base.filter;
 
-
-import com.mcilife.zlnsh.common.base.constant.aliyun.AliyunBucketEnum;
+import com.lcy.cssm.common.base.constant.aliyun.AliyunBucketEnum;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author: 赵天增
+ * @author: lcy
  * @create : 2017/11/11
  * 描述：
  */

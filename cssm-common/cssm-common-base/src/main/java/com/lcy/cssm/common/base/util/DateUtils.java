@@ -1,7 +1,7 @@
 package com.lcy.cssm.common.base.util;
 
 import com.google.common.collect.Lists;
-import com.mcilife.zlnsh.common.base.constant.CommonConstant;
+import com.lcy.cssm.common.base.constant.CommonConstant;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
@@ -1488,7 +1488,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
 
             }
         }else{
-            if(DateUtils.getDateDiff(date, new Date())<=CommonConstant.FIVE){
+            if(DateUtils.getDateDiff(date, new Date())<= CommonConstant.FIVE){
                 long daydiff = DateUtils.getDateDiff(date, new Date());
                 if(daydiff ==0){
                     daydiff=1;

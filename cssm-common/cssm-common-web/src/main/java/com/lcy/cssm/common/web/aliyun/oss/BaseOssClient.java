@@ -3,7 +3,7 @@ package com.lcy.cssm.common.web.aliyun.oss;
 
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.common.auth.DefaultCredentialProvider;
-import com.mcilife.zlnsh.common.base.constant.aliyun.AliyunConstant;
+import com.lcy.cssm.common.base.constant.aliyun.AliyunConstant;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

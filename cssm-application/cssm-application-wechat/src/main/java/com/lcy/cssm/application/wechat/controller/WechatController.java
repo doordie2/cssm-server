@@ -1,22 +1,15 @@
 package com.lcy.cssm.application.wechat.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.aliyun.oss.OSSClient;
 import com.lcy.cssm.application.wechat.wechat.Articles;
 import com.lcy.cssm.application.wechat.wechat.Item;
 import com.lcy.cssm.application.wechat.wechat.ReplyTextMessage;
 import com.lcy.cssm.application.wechat.wechat.ReplyTuwenMessage;
-import com.lcy.cssm.common.base.constant.aliyun.AliyunBucketEnum;
 import com.lcy.cssm.common.core.redis.RedisClient;
 import com.lcy.cssm.common.web.annotation.PageSessionCheck;
 import com.lcy.cssm.common.web.base.BaseController;
-import com.lcy.cssm.common.web.interceptor.AuthInterceptor;
-import com.lcy.cssm.common.web.utils.ParamUtils;
 import com.lcy.cssm.common.web.wechat.AdvancedUtil;
 import com.lcy.cssm.common.web.wechat.JsParam;
-import com.lcy.cssm.common.web.wechat.SNSUserInfo;
-import com.lcy.cssm.common.web.wechat.WeixinOauth2Token;
-import com.lcy.cssm.support.user.dto.UserInfoDTO;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import org.apache.commons.lang3.StringUtils;
@@ -28,15 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.URL;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

@@ -28,7 +28,7 @@ import java.util.Map;
  * @create 2017-04-26 21:15
  **/
 @Configuration
-@MapperScan(basePackages = "com.mclife.zlnsh.*")
+@MapperScan(basePackages = "com.lcy.cssm.*")
 public class MyBatisConfig {
 
     //直接写在one,two下面不能被解析，druid（1.1.8版本）解析报错，不知道为什么，这个属性必须放在这里，然后通过@value解析后用set的方式设置到DataSource里面去

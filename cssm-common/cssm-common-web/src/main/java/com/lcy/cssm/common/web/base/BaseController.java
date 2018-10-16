@@ -1,8 +1,8 @@
 package com.lcy.cssm.common.web.base;
 
 
-import com.mcilife.zlnsh.common.base.constant.CommonConstant;
-import com.mcilife.zlnsh.common.base.exceptions.CommonResult;
+import com.lcy.cssm.common.base.constant.CommonConstant;
+import com.lcy.cssm.common.base.exceptions.CommonResult;
 import org.springframework.beans.factory.annotation.Value;
 
 /**

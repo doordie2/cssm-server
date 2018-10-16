@@ -2,7 +2,7 @@ package com.lcy.cssm.common.provider.mybatis;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.mcilife.zlnsh.common.base.constant.UserTypeEnum;
+import com.lcy.cssm.common.base.constant.UserTypeEnum;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -24,7 +24,7 @@ import java.text.DateFormat;
 import java.util.*;
 
 /**
- * @author : 赵天增
+ * @author : lcy
  * @create : 2018-01-08 10:29
  * 描述 ：mybatis 操作拦截器
  * sql直接拷贝hhttp://phncz310.iteye.com/blog/2251712

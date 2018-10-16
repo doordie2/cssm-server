@@ -5,8 +5,8 @@ package com.lcy.cssm.common.base.util;
  * Copyright (c) 2004-2014 All Rights Reserved.
  */
 
-import com.mcilife.zlnsh.common.base.exceptions.McException;
-import com.mcilife.zlnsh.common.base.exceptions.ResultCode;
+import com.lcy.cssm.common.base.exceptions.McException;
+import com.lcy.cssm.common.base.exceptions.ResultCode;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;

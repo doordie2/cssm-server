@@ -1,8 +1,6 @@
 package com.lcy.cssm.common.base.exceptions;
 
-
-
-import com.mcilife.zlnsh.common.base.constant.CommonConstant;
+import com.lcy.cssm.common.base.constant.CommonConstant;
 import org.apache.commons.lang3.StringUtils;
 
 /**

@@ -19,9 +19,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.mcilife.zlnsh.api</groupId>
-			<artifactId>zlnsh-api-user</artifactId>
-			<version>${zlnsh-api-user.version}</version>
+			<groupId>com.lcy.cssm.api</groupId>
+			<artifactId>cssm-api-user</artifactId>
+			<version>${cssm-api-user.version}</version>
 		</dependency>
 	</dependencies>
 

@@ -2,9 +2,9 @@ package com.lcy.cssm.common.web.interceptor;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.mcilife.zlnsh.common.base.constant.CommonConstant;
-import com.mcilife.zlnsh.common.base.exceptions.CommonResultCode;
-import com.mcilife.zlnsh.common.base.exceptions.McFeignException;
+import com.lcy.cssm.common.base.constant.CommonConstant;
+import com.lcy.cssm.common.base.exceptions.CommonResultCode;
+import com.lcy.cssm.common.base.exceptions.McFeignException;
 import feign.Response;
 import feign.codec.ErrorDecoder;
 import org.apache.commons.lang3.StringUtils;

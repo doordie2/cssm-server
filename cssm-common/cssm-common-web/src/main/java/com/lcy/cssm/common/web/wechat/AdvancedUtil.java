@@ -3,9 +3,9 @@ package com.lcy.cssm.common.web.wechat;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.mcilife.zlnsh.common.base.exceptions.CommonResultCode;
-import com.mcilife.zlnsh.common.base.exceptions.McException;
-import com.mcilife.zlnsh.common.base.util.CommonUtils;
+import com.lcy.cssm.common.base.exceptions.CommonResultCode;
+import com.lcy.cssm.common.base.exceptions.McException;
+import com.lcy.cssm.common.base.util.CommonUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

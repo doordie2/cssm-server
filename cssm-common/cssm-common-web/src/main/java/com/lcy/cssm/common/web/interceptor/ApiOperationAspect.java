@@ -1,9 +1,7 @@
 package com.lcy.cssm.common.web.interceptor;
 
-
-
-import com.mcilife.zlnsh.common.base.constant.CommonConstant;
-import com.mcilife.zlnsh.common.web.annotation.ApiOperation;
+import com.lcy.cssm.common.base.constant.CommonConstant;
+import com.lcy.cssm.common.web.annotation.ApiOperation;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -18,7 +16,7 @@ import java.lang.reflect.Method;
 
 
 /**
- * @author : 赵天增
+ * @author : lcy
  * @create : 2017-10-26 9:39
  * 描述 ：
  */
@@ -31,7 +29,7 @@ public class ApiOperationAspect {
 
     }
 
-    @Pointcut("@annotation(com.mcilife.zlnsh.common.web.annotation.ApiOperation)")
+    @Pointcut("@annotation(com.lcy.cssm.common.web.annotation.ApiOperation)")
     public void controllerInteceptor() {
 
     }
