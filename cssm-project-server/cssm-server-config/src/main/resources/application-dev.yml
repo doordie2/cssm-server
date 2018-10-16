@@ -3,7 +3,7 @@ spring:
     config:
       server:
         git:
-          uri: git@git.mcilife.com:mc-server/zlnsh-repo.git
+          uri: https://github.com/doordie2/cssm-repo.git
           search-paths: '{application}'
   application:
     name: cssm-server-config
