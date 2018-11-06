@@ -33,23 +33,14 @@ zuul:
     cssm-application-common:
       path: /common/**
       stripPrefix: false
-    cssm-application-operation:
-      path: /operation/**
-      stripPrefix: false
     cssm-application-wechat:
       path: /wechat/**
-      stripPrefix: false
-    cssm-application-interaction:
-      path: /interaction/**
       stripPrefix: false
     cssm-application-task:
       path: /task/**
       stripPrefix: false
     cssm-application-mq:
       path: /mq/**
-      stripPrefix: false
-    cssm-application-third:
-      path: /third/**
       stripPrefix: false
   SendErrorFilter:
     error:
